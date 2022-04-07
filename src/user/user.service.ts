@@ -21,7 +21,9 @@ export class UserService {
     };
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findByUsername(username: string) {
+    this.prisma.user.findUnique({
+      where: { username }
+    })
   }
 }
