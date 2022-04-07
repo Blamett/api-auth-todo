@@ -22,7 +22,7 @@ export class UserService {
   }
 
   findByUsername(username: string) {
-    this.prisma.user.findUnique({
+    return this.prisma.user.findUnique({
       where: { username }
     })
   }
