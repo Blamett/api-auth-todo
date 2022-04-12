@@ -13,6 +13,7 @@ export class AuthController {
     @HttpCode(HttpStatus.OK)
     @UseGuards(LocalAuthGuard)
     login(@Request() req: AuthResquest) {
+      console.log('logged')
       return this.authService.login(req.user);
     }
 }
